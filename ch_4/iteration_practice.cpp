@@ -2,6 +2,6 @@
 
 int main()
 {
-    for(int i = 0; i<100; ++i)
-        cout << i << '\t' << pow(i,2) << '\n'; 
+    for(char i = 'a'; i<123; ++i)
+        cout << i << '\t' << int(i) << '\n'; 
 }
