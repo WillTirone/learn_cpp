@@ -1,15 +1,19 @@
-#include </home/willtirone/learn_cpp/ch_5/std_lib_facilities.h>
+#include </home/willtirone/learn_cpp/std_lib_facilities.h>
 
 // on page 141
 
 int area(int length, int width)
 {
+   // if (length<=0||width<=0) error('non positive')
     return length * width;
 }
  
 int framed_area(int x, int y)
-{ 
-    return area(x-2,y-2); 
+{
+    const int frame_width = 2;
+    if (x-frame_width <=0 || y-frame_width<=0)
+     //   error('non positive area() arg called by framed_area()');
+    return area(x-frame_width,y-frame_width); 
 }
 
 int main() 
