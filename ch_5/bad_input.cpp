@@ -4,12 +4,17 @@
 
 int main() 
 try {
-    double d = 0;
-    cin >> d;
-    return 0; // 0 indicates success 
+    // some program 
+    a =; 
+    return 0;  
 }
-catch (runtime_error& e) {
-    cerr << "runtime error: " << e.what() << '\n'; 
+catch (exception& e){
+    cerr << "error: " << e.what() << "\n"; 
     keep_window_open();
-    return 1; // 1 indicates failure 
+    return 1;  // indicates failure
+}
+catch (...){ // will catch any error not caught by exception
+    cerr << "unknown exception \n";
+    keep_window_open();
+    return 2; // failure 
 }

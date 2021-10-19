@@ -8,7 +8,8 @@ try {
     while (std::cin>>i) v.push_back(i); //get values
     for (int i=0;i<=v.size(); ++i)
         std::cout<<"v[" << i << "]==" << v[i] << endl;
-} catch (out_of_range) {
+} 
+catch (out_of_range) {
     cerr << "Oops! Range error \n";
     return 1;
 } catch (...) {
