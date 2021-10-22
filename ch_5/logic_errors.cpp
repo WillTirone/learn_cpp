@@ -11,6 +11,16 @@ int f(int a)
 return 0;
 }
 
+int complicated_function(int a, int b, int c)
+// 0 < a < b < c 
+{
+    if (!(0<a && a<b && b<c))
+        error("bad arguments for function");
+    int z; 
+    z = a + b + c;
+    return z;
+}
+
 int main() 
 {
     vector<double> temps; 
@@ -32,6 +42,7 @@ int main()
     cout << "high : " << high_temp << endl;
     cout << "low : " << low_temp << endl;
     cout << "average : " << sum / no_of_temps << endl;
+    cout << "z " << complicated_function(1,2,3) << endl;
 
     // random nonsense 
 
