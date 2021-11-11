@@ -10,6 +10,33 @@ public:
         :kind(ch), value(val){} 
 }; 
 
+class Token_stream
+{
+    public: 
+    // user interface
+    // only what the user needs  
+    private: 
+    // implementation details
+}; 
+
+
+double expression() 
+{
+    double left = term(); //not implemented yet, more of a placeholder 
+    Token t = ts.get(); // get things from token stream, also not implemented
+
+    switch (t.kind){
+        case '+':
+            return left + term();
+            break;
+        case '-': 
+            return left - term(); 
+            break;
+        default: 
+            return left;
+    }
+}
+
 
 int main()
 {
