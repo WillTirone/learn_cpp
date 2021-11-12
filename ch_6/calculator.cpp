@@ -13,17 +13,54 @@ public:
 class Token_stream
 {
     public: 
-    // user interface
-    // only what the user needs  
+        Token_stream(); 
+        Token get(); 
+        void putback(Token t);
     private: 
-    // implementation details
+        bool full;  
+        Token buffer;
 }; 
 
+Token_stream::Token_stream()
+    :full(false), buffer(0)
+    {
+    }
+
+void Token_stream::putback(Token t)
+{
+    if (full) error("putback() into a full buffer"); 
+    buffer = t;
+    full = true;
+}
+
+Token Token_stream::get()
+    {
+        if (full){
+            // remove token 
+            full=false;
+            return buffer;
+        }       
+    }
+
+    char ch;
+    cin >> ch;
+
+    switch(ch){
+    case ';': // for print 
+    case 'q': //for quit
+    //pick up here on p. 211
+    }
+
+Token_stream ts; // provides get() and putback()
+double primary(){ /* . . . */ }
+double term(){ /* . . . */ }
 
 double expression() 
 {
+    Token_stream ts;
     double left = term(); //not implemented yet, more of a placeholder 
     Token t = ts.get(); // get things from token stream, also not implemented
+    ts.putback(t);
 
     switch (t.kind){
         case '+':
